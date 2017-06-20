@@ -1,0 +1,35 @@
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  
+}
+
+.inner-header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	background: black;
+	margin: 0;
+
+}
+section {
+	margin-top: 5em;
+}
+h1 {
+	width: 50%;
+	color: white;
+	padding-left: 1.5em;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	width: 50%;
+}
+
+nav ul li a{
+	margin-right: 2em;
+	color: white;
+}

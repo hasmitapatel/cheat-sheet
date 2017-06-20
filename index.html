@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Reference Sheet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="inner-header sticky">
+<h1>Reference Sheet</h1>
+<nav>
+  <ul>
+            <li><a href="#">Home</a></li> 
+            <li><a href="#navigation">Navigation</a></li>
+            <li><a href="#">Flexbox</a></li> 
+            <li><a href="#">Responsive</a></li> 
+          </ul>
+</nav>
+</div>
+<section id="navigation">
+<div class="container">
+
+<h2>Sticky Nav</h2>
+<pre><code class="language-css">.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}</code></pre>
+
+<h2>Full Cover Image</h2>
+<pre><code class="language-css">.cover-image {
+  background-image: url(images/________);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  
+}</code></pre>
+
+<h2>Responsive Images</h2>
+<pre><code class="language-css">img { 
+margin: 0 auto; 
+width: 100%; 
+height: auto; 
+
+}</code></pre>
+
+<h2>Vertically center an element within a div</h2>
+<pre><code class="language-css">div {
+  position: relative;
+}
+
+.element {
+position: absolute;
+top: 50%;
+}</code></pre>
+
+
+<h2>Centering a element within a div</h2>
+<pre><code class="language-css">div {
+  position: relative;
+}
+
+.element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}</code></pre>
+
+<h2>Basic Markup - Bootstrap</h2>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Layout&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="css/bootstrap.min.css"&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+<h2>Fade-scroll</h2>
+<h3>HTML</h3>
+<pre><code class="language-markup">&lt;head&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;&lt;/head&gt;
+&lt;div&gt;
+  &lt;div class="fade"&gt;Fade In 01&lt;/div&gt;
+  &lt;div class="fade"&gt;Fade In 02&lt;/div&gt;
+  &lt;div class="fade"&gt;Fade In 03&lt;/div&gt;
+  &lt;div class="fade"&gt;Fade In 04&lt;/div&gt;
+  &lt;div class="fade"&gt;Fade In 05&lt;/div&gt;
+  &lt;div class="fade"&gt;Fade In 06&lt;/div&gt;
+  &lt;div class="fade"&gt;Fade In 07&lt;/div&gt;
+  &lt;div class="fade"&gt;Fade In 08&lt;/div&gt;
+  &lt;div class="fade"&gt;Fade In 09&lt;/div&gt;
+  &lt;div class="fade"&gt;Fade In 10&lt;/div&gt;
+  &lt;h2 class="fade"&gt;Hello&lt;/h2&gt;
+&lt;/div&gt;
+}</code></pre>
+
+<h3>CSS</h3>
+<pre><code class="language-css">.fade {
+  margin: 50px;
+  padding: 50px;
+  background-color: lightgreen;
+  opacity: 1;
+}
+</code></pre>
+
+<h3>JS</h3>
+<pre><code class="language-js">&lt;script&gt;$(window).on("load",function() {
+  $(window).scroll(function() {
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+    $(".fade").each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+      
+      /* If the element is completely within bounds of the window, fade it in */
+      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+        if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
+      } else { //object goes out of view (scrolling up)
+        if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+      }
+    });
+  }).scroll(); //invoke scroll-handler on page-load
+});&lt;/script&gt;
+</code></pre>
+
+</div>
+</section>
+
+  
+  <footer>
+
+  </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/prism.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
